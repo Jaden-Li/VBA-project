@@ -1,0 +1,7 @@
+<<<<<<< HEAD
+Sub getEmptyCell()
+    Dim rng As Range
+    Set rng = Application.Intersect(Range("A:A"), _
+                                    Range("B:D").SpecialCells(xlCellTypeConstants).EntireRow) 'xlCellTypeConstants表示cells内有内容
+    rng.Value = 1
+End Sub

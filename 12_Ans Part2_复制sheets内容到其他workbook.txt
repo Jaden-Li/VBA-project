@@ -1,0 +1,17 @@
+Sub moveSh()
+    Const rs As Long = 65536
+    Const cs As Integer = 256
+    Dim copyRng As Range
+    Dim pasteRng As Range
+    For Each sh In Workbooks("A.xls").Sheets
+    '选择要移动的区域
+    sh.Activate             							'Activate？
+    Set copyRng = Application.Intersect(Range("A2").CurrentRegion, _
+										Range("a2", Cells(rs, cs)))                                                                                           
+    '选择目标区域
+    Workbooks("第12集练习题.xls").Activate              'Activate?
+    Set pasteRng = Cells(Sheets("第2题").Cells(rs, 1).End(xlUp).Row + 1, 1)
+    '复制到目标区域
+    copyRng.Copy pasteRng
+    Next
+End Sub
