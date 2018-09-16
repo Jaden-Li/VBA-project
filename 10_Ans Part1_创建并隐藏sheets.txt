@@ -1,0 +1,14 @@
+Sub copyPf()
+    Dim i As Integer
+    Dim shName As String
+' 确定工作表名称
+    i = Sheets.Count - 1
+    shName = i & "日报表"
+' 复制模板工作表
+    Sheets("日报表模板").Copy after:=Sheets(Sheets.Count)
+' 重命名模板工作表
+    ActiveSheet.name = shName
+' 隐藏工作表
+    ActiveSheet.Visible = False
+End Sub
+
