@@ -1,0 +1,16 @@
+Sub saveAsWb()
+    Dim wb As Workbook
+    Dim shName As String
+    Dim sh As Worksheet
+	Application.ScreenUpdating = False
+    For i = 3 To ThisWorkbook.Sheets.Count				'从第3张工作表到最后一张工作表
+        Set sh = Sheets(i)
+        sh.Visible = True								'？似乎只有在工作表不隐藏的情况下。才能进行copy
+        shName = sh.name								'获取工作表name，作为储存名称
+        sh.Copy											'关键：copy后无任何argument，表示“复制到new workbook””
+        Set wb = ActiveWorkbook							'activeworkbook为上一步代开的new workbook
+        wb.SaveAs ThisWorkbook.Path & "/" & shName & ".xlsx" '注意“/”个符号
+		wb.Close True									'关闭workbook，否则#8行无法正常运行
+        sh.Visible = False
+    Next
+End Sub

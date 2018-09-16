@@ -1,0 +1,9 @@
+Sub temp()
+    Dim shNumber As Integer
+    Application.DisplayAlerts = False
+    shNumber = Sheets.Count
+    For i = shNumber To 3 Step -1 	'倒序删除
+        Sheets(Sheets.Count).Delete '从最后一个工作表删起
+    Next
+    Application.DisplayAlerts = True
+End Sub
