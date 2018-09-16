@@ -1,0 +1,7 @@
+Sub isPositive()
+    For Each c In Selection
+    If IsNumeric(c) Then
+        If c.Value > 0 Then c.Value = "正数"
+    End If
+    Next
+End Sub

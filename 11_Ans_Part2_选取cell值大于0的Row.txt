@@ -1,0 +1,15 @@
+Attribute VB_Name = "模块2"
+Sub selectRow()
+    Dim n As Integer
+    Dim rng As Range
+    
+    For Each c In Selection
+        If c.Value = "正数" Then
+            n = n + 1       '实现预设一个n是关键
+            If n = 1 Then Set rng = c.EntireRow '要设置第一个rng
+            Set rng = Union(rng, c.EntireRow)
+        End If
+    Next
+    rng.Select
+End Sub
+
