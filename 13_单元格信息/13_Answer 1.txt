@@ -1,0 +1,64 @@
+Attribute VB_Name = "Module11"
+'1 获取单元格的值
+Sub getVal()
+    With ActiveSheet.Range("B2").CurrentRegion
+        'Range("b10") = .Range("b1").Value
+        'Range("c10") = "'" & .Range("a2").End(xlToRight).Formula
+        'Range("b11") = .Range("b1").Text
+    End With
+End Sub
+'2 获取地址
+Sub getAdd()
+    With ActiveSheet.Range("B2").CurrentRegion
+    'Range("b12") = .Address(True, True) '第一个True：row是absolute ref；第二个True：col是absolute ref
+    'Range("c12") = .Address(0, 0)       '0=False; 1=True
+    'Range("d12") = .Address(1, 0)
+    'Range("e12") = .Address(0, 1)
+    End With
+End Sub
+'3 获取行列数
+Sub getRow()
+    With ActiveSheet.Range("B2").CurrentRegion
+    'Range("b13") = .Row
+    'Range("b14") = .Rows.Count
+    'Range("b5") = .Column
+    'Range("b16") = .Columns.Count
+    'Range("b17") = .Range("A1").Address  '此处"A1"表示在相对坐标系下的address
+    End With
+End Sub
+'4 获取格式信息
+Sub getFormat()
+    With ActiveSheet.Range("B2").CurrentRegion
+    Range("B19") = .Range("A1").Font.Size
+    Range("B20") = .Range("A1").Font.ColorIndex
+    Range("B21") = .Range("A1").Interior.ColorIndex
+    Range("B22") = .Range("A1").Border.LineStyle '这个没见过
+    
+    End With
+    
+End Sub
+'5 获取评论内容
+Sub getComment()
+    Range("b24").Value = Range("i2").Comment.Text
+End Sub
+'6 获取单元格大小
+Sub getCellSize()
+    With Range("b3")
+    Range("b26").Value = .Top
+    Range("b27").Value = .Left
+    Range("b28").Value = .Height
+    Range("b29").Value = .Width
+    End With
+End Sub
+'7 获取上级信息
+Sub getParent()
+    With Range("b3")
+    Range("b31").Value = .Parent.Name
+    Range("b32").Value = .Parent.Parent.Name
+    End With
+End Sub
+'8 判断单元格内容
+Sub ifHas()
+    Range("b34").Value = Range("i3").HasFormula
+    Range("b35").Value = Range("i4").Hyperlinks.Count
+End Sub

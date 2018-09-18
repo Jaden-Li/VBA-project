@@ -1,0 +1,12 @@
+Attribute VB_Name = "Module1"
+'1.用相对地址引用D10
+Sub getD10()
+    ActiveCell.Value = Range("C4").CurrentRegion.Range("b8").Value
+End Sub
+
+'2.调整批注格式
+Sub setComment()
+    Range("f3").Comment.Shape.ScaleHeight = Range("c4").CurrentRegion.Height
+End Sub
+
+
