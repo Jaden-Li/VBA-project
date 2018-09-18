@@ -1,0 +1,9 @@
+Attribute VB_Name = "模块4"
+Sub getColorIndex()
+    Dim rng As Range
+    Set rng = Range("A1:a56")               '这个有点hard-coded
+    For Each c In rng
+        c.Offset(, 1) = c.Interior.ColorIndex
+    Next
+End Sub
+
