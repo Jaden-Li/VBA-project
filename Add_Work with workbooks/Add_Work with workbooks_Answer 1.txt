@@ -1,8 +1,8 @@
-Attribute VB_Name = "Ä£¿é1"
+Attribute VB_Name = "åœ¨å·¥ä½œè¡¨é—´å¤åˆ¶range"
 Sub temp()
     Dim sourcrBook As Workbook, targetBook As Workbook
     Selection.Copy
     Set sourceBook = Application.ActiveWorkbook
-    Set targetBook = Application.Workbooks.Open("C:\Users\Administrator\Documents\GitHub\VBA-project\14_µ¥Ôª¸ñ¸ñÊ½\14_Practice 1.xlsx")     'Ö±½Ó¸´ÖÆ»áÓöµ½activateµÄÎÊÌâ£¬Òò´ËĞèÒªÖØĞÂ´ò¿ª¹¤×÷²¾
+    Set targetBook = Application.Workbooks.Open("C:\Users\Administrator\Documents\GitHub\VBA-project\14_å•å…ƒæ ¼æ ¼å¼\14_Practice 1.xlsx")     'ç›´æ¥å¤åˆ¶ä¼šé‡åˆ°activateçš„é—®é¢˜ï¼Œå› æ­¤éœ€è¦é‡æ–°æ‰“å¼€å·¥ä½œç°¿
     targetBook.Sheets(1).Paste
 End Sub
