@@ -1,0 +1,8 @@
+Attribute VB_Name = "模块1"
+Sub temp()
+    Dim sourcrBook As Workbook, targetBook As Workbook
+    Selection.Copy
+    Set sourceBook = Application.ActiveWorkbook
+    Set targetBook = Application.Workbooks.Open("C:\Users\Administrator\Documents\GitHub\VBA-project\14_单元格格式\14_Practice 1.xlsx")     '直接复制会遇到activate的问题，因此需要重新打开工作簿
+    targetBook.Sheets(1).Paste
+End Sub
